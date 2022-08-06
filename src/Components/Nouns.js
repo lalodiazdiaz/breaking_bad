@@ -27,8 +27,13 @@ const Nouns = () => {
   });
 
   /**Llamar el metodo al inicar */
-  useEffect(() => {
-    getNouns();
+  useEffect(async () => {
+    var url = "https://www.breakingbadapi.com/api/characters";
+    const resp = await fetch(url);
+    const data = await resp.json(); //conversion a json
+    console.log(data);
+    setInfo(data);
+    setloading(true);
   }, []);
 
   return (
