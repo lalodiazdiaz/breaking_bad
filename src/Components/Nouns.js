@@ -33,6 +33,13 @@ const Nouns = () => {
 
   return (
     <main>
+      <input
+        type="text"
+        placeholder="Search"
+        className="form-control"
+        onChange={handleChange}
+        value={value}
+      />
       {loading ? (
         <ul>
           {filterNames.map((noun, i) => (
